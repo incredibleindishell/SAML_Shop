@@ -60,7 +60,7 @@ The modified SAML response will look like this:
           <ds:DigestValue>8lJpk95uugFQhcvvE7ZcK+ApIBEBojnyrmIirUTlkBM=</ds:DigestValue>
         </ds:Reference>
       </ds:SignedInfo>
-      <ds:SignatureValue><ds:SignatureValue/>
+      <ds:SignatureValue></ds:SignatureValue>
       <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
         <ds:X509Data>
           <ds:X509Certificate>BASE64_ENCODED_VALUE</ds:X509Certificate>
