@@ -66,7 +66,7 @@ The modified SAML response will look like this:
           <ds:X509Certificate>BASE64_ENCODED_VALUE</ds:X509Certificate>
         </ds:X509Data>
       </KeyInfo>
-  </ds:Signature>
+    </ds:Signature>
     <Subject>
       <NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent">admin@TEST.COM</NameID>
       <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
